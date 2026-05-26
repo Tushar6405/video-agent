@@ -96,10 +96,6 @@ video-agent/
 python main.py
 ```
 
-## 🌐 Deployment
-
-Deployed on Hugging Face Spaces — [Live Demo](https://huggingface.co/spaces/YOURUSERNAME/SPACENAME)
-
 ## 📄 License
 
 MIT License
