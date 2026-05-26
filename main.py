@@ -62,5 +62,4 @@ if __name__ == "__main__":
         if not question:
             continue
         answer = ask_question(rag_chain, question)
-        print(f"\n🤖 Assistant: {answer}\n") 
-        
+        print(f"\n🤖 Assistant: {answer}\n")

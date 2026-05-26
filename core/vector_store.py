@@ -36,7 +36,7 @@ def build_vector_store(transcript : str)->Chroma:
         persist_directory=CHROMA_DIR
     )
 
-    return vector_store 
+    return vector_store
 
 
 
@@ -55,5 +55,3 @@ def get_retriever(vector_store : Chroma, k :int = 4):
         search_type = 'similarity',
         search_kwargs = {"k":k}
     )
-
-

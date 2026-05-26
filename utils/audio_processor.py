@@ -1,10 +1,5 @@
 import yt_dlp
 from pydub import AudioSegment
-from pydub.utils import which
-
-AudioSegment.converter = which("ffmpeg")
-AudioSegment.ffprobe = which("ffprobe")
-
 import os
 
 DOWNLOAD_DIR = 'downloades'
@@ -30,6 +25,7 @@ def download_youtube_audio(url :str) ->str:
     return filename
 
 
+
 def convert_to_wav(input_path: str) -> str:
     """Convert any audio/video file to WAV format using pydub."""
     output_path = os.path.splitext(input_path)[0] + "_converted.wav"
@@ -37,6 +33,7 @@ def convert_to_wav(input_path: str) -> str:
     audio = audio.set_channels(1).set_frame_rate(16000) #16khz
     audio.export(output_path, format="wav")
     return output_path
+
 
 
 def chunk_audio(wav_path : str , chunk_minutes : int = 10) -> list:
@@ -53,7 +50,6 @@ def chunk_audio(wav_path : str , chunk_minutes : int = 10) -> list:
         chunks.append(chunk_path)
     
     return chunks
-
 
 def process_input(source: str) -> list:
     if source.startswith("http://") or source.startswith("https://"):

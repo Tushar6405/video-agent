@@ -8,7 +8,7 @@ from pydub import AudioSegment
 SARVAM_PIECE_SECONDS = 25
 
 
-WHISPER_MODEL = os.getenv("WHISPER_MODEL", "base")
+WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
 
 
 SARVAM_API_KEY = os.getenv("SARVAM_API_KEY")
@@ -87,6 +87,10 @@ def transcribe_chunk_sarvam(chunk_path: str) -> str:
                 os.remove(piece_path)
 
     return full_text.strip()
+
+   
+
+
 
 def transcribe_chunk(chunk_path: str, language: str = "english") -> str:
     """
