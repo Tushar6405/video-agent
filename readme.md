@@ -14,16 +14,16 @@ An intelligent meeting analysis tool that transcribes, summarizes, and lets you 
 
 ## 🛠️ Tech Stack
 
-| Component                 | Technology             |
-| ------------------------- | ---------------------- |
-| UI                        | Streamlit              |
-| Speech-to-Text (English)  | OpenAI Whisper (local) |
-| Speech-to-Text (Hinglish) | Sarvam AI — Saaras v2.5|
-| LLM                       | Mistral AI             |
-| RAG Pipeline              | LangChain + ChromaDB   |
-| Embeddings                | Sentence Transformers  |
-| Audio Download            | yt-dlp                 |
-| Audio Processing          | pydub + ffmpeg         |
+| Component                 | Technology              |
+| ------------------------- | ----------------------- |
+| UI                        | Streamlit               |
+| Speech-to-Text (English)  | OpenAI Whisper (local)  |
+| Speech-to-Text (Hinglish) | Sarvam AI — Saaras v2.5 |
+| LLM                       | Mistral AI              |
+| RAG Pipeline              | LangChain + ChromaDB    |
+| Embeddings                | Sentence Transformers   |
+| Audio Download            | yt-dlp                  |
+| Audio Processing          | pydub + ffmpeg          |
 
 ## 🚀 Getting Started (Local)
 
@@ -66,6 +66,30 @@ streamlit run app.py
 ```
 
 Then open `http://localhost:8501` in your browser.
+
+## ☁️ Deploy on Streamlit Cloud
+
+1. **Push your code to GitHub** (make sure `app.py` and `requirements.txt` are in the root).
+
+2. **Go to [share.streamlit.io](https://share.streamlit.io)** and sign in with your GitHub account.
+
+3. **Click "Create app"** and fill in:
+   - **Repository:** `Tushar6405/video-agent`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+
+4. **Add your secret keys** — click "Advanced settings" and paste:
+   ```toml
+   MISTRAL_API_KEY = "your_mistral_api_key_here"
+   SARVAM_API_KEY = "your_sarvam_api_key_here"
+   ```
+
+5. **Click Deploy** — your app will be live at:
+   ```
+   https://your-app-name.streamlit.app
+   ```
+
+> ⚠️ **Note:** Streamlit Cloud free tier has ~1GB RAM. Whisper `base` model is recommended to avoid memory errors.
 
 ## 🌐 Transcription Details
 
