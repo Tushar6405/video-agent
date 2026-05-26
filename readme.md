@@ -62,21 +62,21 @@ Get your Sarvam API key at [dashboard.sarvam.ai](https://dashboard.sarvam.ai).
 ### Run the app
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 Then open `http://localhost:8501` in your browser.
 
 ## ☁️ Deploy on Streamlit Cloud
 
-1. **Push your code to GitHub** (make sure `streamlit_app.py` and `requirements.txt` are in the root).
+1. **Push your code to GitHub** (make sure `app.py` and `requirements.txt` are in the root).
 
 2. **Go to [share.streamlit.io](https://share.streamlit.io)** and sign in with your GitHub account.
 
 3. **Click "New app"** and fill in:
    - **Repository:** `Tushar6405/video-agent`
    - **Branch:** `main`
-   - **Main file path:** `streamlit_app.py`
+   - **Main file path:** `app.py`
 
 4. **Add your secret keys:**
    - In the Streamlit Cloud dashboard, go to **Settings → Secrets**
@@ -111,7 +111,7 @@ Sarvam's **Saaras v2.5** is purpose-built for Indian languages and handles mid-s
 
 ```
 video-agent/
-├── streamlit_app.py       # Main Streamlit UI
+├── app.py                 # Main Streamlit UI
 ├── main.py                # CLI entry point
 ├── requirements.txt       # Python dependencies
 ├── packages.txt           # System dependencies (ffmpeg)
