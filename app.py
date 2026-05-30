@@ -343,7 +343,16 @@ with st.sidebar:
     st.markdown("---")
 
     st.markdown('<span class="badge badge-purple">Input</span>', unsafe_allow_html=True)
-    source = st.text_input("YouTube URL or File Path", placeholder="https://youtube.com/watch?v=... or /path/to/file.mp4")
+    
+    input_mode = st.radio("Input Type", ["YouTube URL", "Upload File"], horizontal=True)
+    
+    source = ""
+    uploaded_file = None
+    
+    if input_mode == "YouTube URL":
+        source = st.text_input("YouTube URL", placeholder="https://youtube.com/watch?v=...")
+    else:
+        uploaded_file = st.file_uploader("Upload video/audio file", type=["mp4", "wav", "mp3", "m4a", "webm"])
 
     language = st.selectbox("Language", ["english", "hinglish"], index=0)
 
@@ -369,8 +378,8 @@ st.markdown("---")
 
 # ── Run Pipeline ────────────────────────────────────────────────────────────────
 if run_btn:
-    if not source.strip():
-        st.error("Please enter a YouTube URL or file path.")
+    if not source.strip() and not uploaded_file:
+        st.error("Please enter a YouTube URL or upload a file.")
     else:
         st.session_state.pipeline_done = False
         st.session_state.result = None
@@ -387,7 +396,16 @@ if run_btn:
                 st.info("⚙️ Pipeline running — see sidebar for live status…")
 
             update_step("audio", "active")
-            chunks = process_input(source)
+            if uploaded_file:
+                temp_path = f"/tmp/{uploaded_file.name}"
+                with open(temp_path, "wb") as f:
+                    f.write(uploaded_file.read())
+                chunks = process_input(temp_path)
+            elif source.strip():
+                chunks = process_input(source)
+            else:
+                st.error("Please enter a YouTube URL or upload a file.")
+                st.stop()   
             update_step("audio", "done")
 
             update_step("transcript", "active")
