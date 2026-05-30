@@ -1,4 +1,4 @@
-# 🎬 AI Video Assistant
+# 🎙️ Transcripto
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://video-agent-k3rilwahvo58trtkucjfxz.streamlit.app)
 
