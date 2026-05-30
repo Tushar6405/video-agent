@@ -1,37 +1,9 @@
-# Virtual Environment
-.venv/
-
-# Python cache
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-
-# Environment variables (NEVER upload this)
 .env
-
-# Downloaded audio/video files
-downloades/
-*.mp3
-*.mp4
 *.wav
-*.webm
-*.m4a
-
-# Vector database (rebuilds automatically)
+downloades/
 vector_db/
-
-# VS Code settings
-.vscode/
-
-# Windows system files
-Thumbs.db
-desktop.ini
-
-# Pytest cache
-.pytest_cache/
-
-# Egg info
-*.egg-info/
-dist/
-build/
+*.bin
+*.sqlite3
