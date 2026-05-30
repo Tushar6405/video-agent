@@ -18,8 +18,8 @@ load_dotenv()
 
 # ─── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="AI Video Assistant",
-    page_icon="🎬",
+    page_title="Transcripto",
+    page_icon="🎙️", 
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -372,7 +372,7 @@ with st.sidebar:
             render_step_bar(label, step, icon)
 
 # ─── Main Area ──────────────────────────────────────────────────────────────────
-st.markdown('<div class="hero-title">AI Video Assistant</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-title">Transcripto</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-sub">Transcribe · Summarise · Chat with your meetings</div>', unsafe_allow_html=True)
 st.markdown("---")
 
